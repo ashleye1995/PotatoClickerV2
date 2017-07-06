@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>test</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<style>
+    #wrapper {
+        width: 375px;
+        border: solid 1px white;
+        margin: 0 auto;
+        padding: 5px;
+    }
+    
+    #wrapper h1 {
+        padding-bottom: 5px;
+        text-align: center;
+        border-bottom: dashed 2px white;
+    }
+</style>
+
+<body>
+    <div id="wrapper">
+        <h1>Test</h1>
+        <p><span id="potatoes"></span></p>
+        <button onclick="potatoClick()" id="potato_btn">Potato</button>
+    </div>
+</body>
+
+<script>
+    var farmLevel = {
+            value: 9
+        },
+        potato = {
+            value: 0
+        },
+        autoFarmer = {
+            value: 9, //how many farmers do you have?
+            defaultPrice: 17, //Price of the farmers
+        }
+
+    function potatoClick() {
+        potato
+        if (farmLevel <= 9) {
+            potato.value++;
+        }
+        if (farmLevel.value >= 10) {
+            potato.value++;
+        }
+    }
+
+    function autoFarmerPicker() {
+        if (autoFarmer.value >= 1) {
+            y = 0.1 * autoFarmer.value;
+            x = potato.value + y;
+            potato.value = x;
+        }
+    }
+
+    function inta() {
+        document.getElementById('potatoes').innerHTML = potato.value.toFixed(1);
+        //autoFarmerPicker();
+    }
+    window.setInterval(inta, 10);
+
+
+
+
+
+
+
+
+
+
+    document.getElementById('potatoes').innerHTML = potato.value.toFixed(1);
+</script>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>PotatoClicker v2</title>
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <header>
+        <h2>PotatoClicker v2</h2>
+    </header>
+
+    <div id="game-wrapper">
+        <div id="game-header">
+            <ul>
+                <li>Potatoes: <span id="potatoes"></span></li>
+                <li>TimePlayed: <span id="hours"></span>:<span id="minutes"></span>:<span id="seconds"></span></li>
+            </ul>
+        </div>
+
+        <div id="game-middle">
+            <img src="img/potato.png" id="potato" onClick="addPotatoes()" alt="" width="360px" height="260px" />
+        </div>
+
+        <div id="game-footer">
+            <div id="toggleButtons">
+                <button type="button" id="shopButton" class="shopButton">Open/Close Shop!</button>
+                <button type="button" id="statsButton" class="shopButton">Open/Close Stats!</button>
+            </div>
+
+            <div id="stats">
+                <h1>Stats</h1>
+                <hr>
+                <table style="width:98%;text-align:center;">
+                    <tr class="farmLevelTable">
+                        <td>Farm Level:</td>
+                        <td><span id="farmLevel"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Farmers:</td>
+                        <td><span id="autoFarmer"></span></td>
+                    </tr>
+                    <tr>
+                        <td>AutoFarmer Level:</td>
+                        <td><span id="autoFarmerLevel"></span></td>
+                    </tr>
+                    <tr>
+                        <td>PotatoPlants:</td>
+                        <td><span id="potatoPlant"></span></td>
+                    </tr>
+                    <tr>
+                        <td>PotatoPlant Level:</td>
+                        <td><span id="potatoPlantLevel"></span></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="shop">
+                <h1>Shop</h1>
+                <hr>
+                <table style="width:98%;text-align:center;">
+                    <tr>
+                        <th colspan="2" id="farmUpgrade"><button onClick="upgradeFarm()">Upgrade your farm!<br><span id="farmLevelPrice"></span></button></th>
+                    </tr>
+                    <tr>
+                        <td id="buyAutoFarmer"><button onClick="buyAutoFarmer()">Buy a farmer!<br><span id="autoFarmerPrice"></span></button></td>
+                        <td id="buyAutoFarmerUpgrade"><button onClick="buyAutoFarmerUpgrade()" id="autoFarmerUpgrade">Upgrade your farmer!<br><span id="autoFarmerUpgradePrice"></span></button></td>
+                    </tr>
+                    <tr>
+                        <td id="buyPotatoPlant"><button type="button" onClick="potatoPlantx()" id="potatoPlantx">Buy a potato plant!</button></td>
+                        <!--<td id="buyPotatoPlantUpgrade"><button class="disabled" type="button" id="potatoPlantUpgrade">Upgrade the plant!</button></td>-->
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p class="tips">Auto Farmer unlocks at level 3!</p>
+        <p class="tips">Every 10 levels you gain an extra potato per click</p>
+        <p class="tips">Potato Plant unlocks at level 50!</p>
+        <hr>
+        <p>This game is pure Javascript. It does ot save when you close the page! So if you want to restart just refresh!</p>
+        <p><span style="color:red">PotatoClicker v2</span> made by Ashley Elson <a href="https://twitter.com/ashleye1995"><span class="twitter">@ashleye1995</span></a></p>
+    </footer>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    $('#shopButton').click(function() {
+        $('#shop').animate({
+            height: 'toggle'
+        }, 1000, function() {});
+    });
+    $('#statsButton').click(function() {
+        $('#stats').animate({
+            height: 'toggle'
+        }, 1000, function() {});
+    });
+</script>
+
+</html>
